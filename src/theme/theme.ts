@@ -32,7 +32,7 @@ export const theme = {
         black: 900,
     },
     fontSizesFluid: {
-        
+        // TBD
     },
     borders: {
         default: `1px solid ${colors.black}`
@@ -44,7 +44,7 @@ export const theme = {
         outlineWidth: '2px',
     },
     highlight: {
-        background: colors.black,
+        background: colors.black + ' !important',
         color: colors.white
     },
     easings: {

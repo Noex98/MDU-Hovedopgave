@@ -31,7 +31,7 @@ export const GlobalStyles = () => (
 
             *::selection {
                 background: ${theme.highlight.background};
-                color: : ${theme.highlight.color};
+                color: ${theme.highlight.color};
             }
 
             *:focus-visible {

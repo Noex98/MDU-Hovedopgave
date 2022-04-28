@@ -1,11 +1,14 @@
 import emotionReset from 'emotion-reset'
 import { Global, css } from '@emotion/react'
 import { theme } from '../../theme/theme'
+import { fontFace } from '../typography/font-face'
 
 export const GlobalStyles = () => (
     <Global 
         styles={css`
             ${emotionReset}
+            
+            ${fontFace}
 
             html {
                 box-sizing: border-box;
@@ -22,7 +25,7 @@ export const GlobalStyles = () => (
             body {
                 height: 100vh;
                 height: -webkit-fill-availabe;
-                font-family: ${/*theme.fonts.bold*/''};
+                font-family: ${theme.fonts.bold};
                 margin: 0,
             }
 

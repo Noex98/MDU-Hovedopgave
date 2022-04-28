@@ -1,19 +1,17 @@
 import { colors } from "./colors/colors";
 
-const fallbackFont = ''
+const fallbackFont = ', Montserrat'
 
 export const theme = {
     colors: {
         ...colors
     },
     fonts: {
-        /*
         bold:`COOP-BOLD ${fallbackFont}`,
         light: `COOP-Light ${fallbackFont}`,
         medium: `COOP-Medium ${fallbackFont}`,
         regular: `COOP-Regular ${fallbackFont}`,
         semiBold: `COOP-SemiBold ${fallbackFont}`,
-        */
     },
     fontSizes: {
         xs: '10px',
@@ -23,7 +21,15 @@ export const theme = {
         xl: '24px',
         xxl: '36px',
         xxxl: '48px'
-
+    },
+    fontWeight: {
+        light: 300,
+        regular: 400,
+        medium: 500,
+        semiBold: 600,
+        bold: 700,
+        extraBold: 800,
+        black: 900,
     },
     fontSizesFluid: {
         

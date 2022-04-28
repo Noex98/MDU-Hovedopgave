@@ -9,6 +9,14 @@ type Props = {
     admin?: boolean,
 }
 
+/**
+ * Require certain conditions before entering a component
+ * - loggedIn: If user is not signed in, redirect to login page
+ * - assignedStorre: If user is not assigned a store, redirect to store select
+ * - admin: to be done
+ */
+
+
 export const Require = ({loggedIn, assignedStore, admin, children}: Props) => {
 
     if (loggedIn && assignedStore) return (

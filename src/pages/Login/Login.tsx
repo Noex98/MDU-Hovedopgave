@@ -2,6 +2,13 @@ import { useState, useContext } from 'react';
 import { signInWithGoogle, signOut } from '../../myFirebase/Auth';
 import { useNavigate } from 'react-router-dom';
 import { userContext } from '../../myFirebase/Auth';
+import { Header } from '../../components/Header';
+import { 
+    StyledContentWrapper,
+    StyledHeadline,
+    StyledPageWrapper 
+} from './styled';
+import { CtaButton } from '../../components/CtaButton';
 
 export const Login = () => {
 
@@ -30,11 +37,22 @@ export const Login = () => {
     }
 
     return (
-        <div>
-            <p>Login Page</p>
-            <button onClick={() => signIn()} disabled={popUpopen}>
-                Sign in with Google
-            </button>
-        </div>
+        <StyledPageWrapper>
+            <Header />
+            <StyledContentWrapper>
+                <div>
+                    <StyledHeadline>Login</StyledHeadline>
+                    <CtaButton 
+                        onClick={() => signIn()} 
+                        disabled={popUpopen}
+                        color='neutral'
+                        size='lg'
+                        variant='primary'
+                    >
+                        Sign in with Google
+                    </CtaButton>
+                </div>
+            </StyledContentWrapper>
+        </StyledPageWrapper>
     );
 };

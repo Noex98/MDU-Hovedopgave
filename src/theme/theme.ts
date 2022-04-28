@@ -20,7 +20,10 @@ export const theme = {
         sm: '14px',
         md: '16px',
         lg: '18px',
-        xl: '22px',
+        xl: '24px',
+        xxl: '36px',
+        xxxl: '48px'
+
     },
     fontSizesFluid: {
         

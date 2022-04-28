@@ -4,8 +4,8 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { Require } from './components/Require';
 
 import { 
-    HomePage, 
-    Profile, 
+    HomePage,
+    Profile,
     StoreSelector,
     Login
 } from './pages';

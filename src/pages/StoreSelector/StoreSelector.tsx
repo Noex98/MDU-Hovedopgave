@@ -3,6 +3,10 @@ import { userContext, getStores } from '../../myFirebase';
 import { Store } from '../../dataModels'
 import { Spinner } from '../../components/Spinner';
 import { StoreOption } from './components';
+import { Header } from '../../components/Header';
+import { StyledHeadline, StyledStoreContainer } from './styled';
+import { Gutter } from '../../components/Gutter';
+import { TextInput } from '../../components/FormElements';
 
 
 
@@ -11,6 +15,7 @@ export const StoreSelector = () => {
     const [stores, setStores] = useState<Store[] | null>(null)
     const [loading, setLoading] = useState(true)
     const [error, setError] = useState(null)
+    const [searchValue, setSearchValue] = useState('')
     const user = useContext(userContext)
     
     useEffect(() => {
@@ -26,23 +31,43 @@ export const StoreSelector = () => {
             })
     }, [])
 
+    const isStoreValid = (store: Store) => {
+        if (searchValue === ''){
+            return true;
+        }
+        return store.name.toLocaleLowerCase().includes(searchValue.toLocaleLowerCase())
+    }
+    
     return (
         <>
-            <div>Select store</div>
-            {loading && (<Spinner />)}
-            
-            {stores && user && (
-                stores.map((store, index) => (
-                    <StoreOption userId={user.uid} storeId={store.id} name={store.name} />
-                ))
-            )}
-
-            {error && (
-                <>
-                    <div>An error occured</div>
-                    <div>{error}</div>
-                </>
-            )}
+            <Header/>
+            <StyledHeadline>Select store</StyledHeadline>
+            <Gutter>
+                {loading && (<Spinner />)}
+                <TextInput 
+                    placeholder='Search'
+                    onChange={e => setSearchValue(e.target.value)}
+                />
+                <StyledStoreContainer>
+                    <>
+                        {stores && user && (
+                            stores.map((store, index) => (
+                                isStoreValid(store) && (
+                                    <div key={index}>
+                                        <StoreOption userId={user.uid} storeId={store.id} name={store.name} />
+                                    </div>
+                                )
+                            ))
+                        )}
+                    </>
+                </StyledStoreContainer>
+                {error && (
+                    <>
+                        <div>An error occured</div>
+                        <div>{error}</div>
+                    </>
+                )}
+            </Gutter>
         </>
     )
 

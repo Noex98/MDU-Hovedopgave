@@ -6,7 +6,7 @@ import { Props } from "./CtaButton";
 
 export const StyledButton = styled.button<Props>(({theme}) => ({
     textAlign: 'center',
-    borderRadius: 4,
+    borderRadius: theme.borderRadius.standard,
     cursor: 'pointer',
 
     '&:disabled': {

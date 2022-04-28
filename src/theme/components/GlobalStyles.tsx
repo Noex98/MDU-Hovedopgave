@@ -22,6 +22,13 @@ export const GlobalStyles = () => (
             *after {
                 box-sizing: inherit;
             }
+
+            input,
+            textarea,
+            button {
+                font-family: inherit
+            }
+
             body {
                 height: 100vh;
                 height: -webkit-fill-availabe;

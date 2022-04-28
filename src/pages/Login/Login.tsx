@@ -8,7 +8,7 @@ import {
     StyledHeadline,
     StyledPageWrapper 
 } from './styled';
-import { CtaButton } from '../../components/CtaButton';
+import { CtaButton } from '../../components/FormElements/CtaButton';
 
 export const Login = () => {
 

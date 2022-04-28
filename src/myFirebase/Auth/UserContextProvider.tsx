@@ -23,7 +23,6 @@ export const UserContextProvider = ({ children }: Props) => {
     const auth = getAuth();
 
     const logInHandler = (user: IUser) => {
-        console.log(user);
         
         setLoading(true)
         setUser({

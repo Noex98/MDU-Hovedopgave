@@ -34,6 +34,9 @@ export const theme = {
     fontSizesFluid: {
         // TBD
     },
+    borderRadius: {
+        standard: '4px'
+    },
     borders: {
         default: `1px solid ${colors.black}`
     },

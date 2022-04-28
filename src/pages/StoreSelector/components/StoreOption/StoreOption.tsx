@@ -1,6 +1,7 @@
 import React from 'react'
 import { asignToStore } from '../../../../myFirebase'
 import { useNavigate } from 'react-router-dom'
+import { StyledStoreOption } from './styled'
 
 type Props = {
     userId: string,
@@ -22,8 +23,8 @@ export const StoreOption = ({ name, userId, storeId }: Props) => {
     }
 
     return (
-        <div>
-            <span onClick={() => onclickHandler()}>{name}</span>
-        </div>
+        <StyledStoreOption onClick={() => onclickHandler()}>
+            {name}
+        </StyledStoreOption>
     )
 }

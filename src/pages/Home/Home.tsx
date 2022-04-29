@@ -1,16 +1,12 @@
-import { signOut } from '../../myFirebase'
 import { StyledTest } from './styled';
-import { Header } from '../../components/Header';
+import { PageFrame } from '../../components/PageFrame';
 
 export const HomePage = () => {
 
     return (
-        <div>
-            <Header />
+        <PageFrame>
             <p>Home Page</p>
-            
-            <StyledTest>asdasdasd</StyledTest>
-        </div>
+        </PageFrame>
     );
 };
 

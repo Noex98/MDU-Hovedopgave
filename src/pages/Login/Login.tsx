@@ -2,7 +2,7 @@ import { useState, useContext } from 'react';
 import { signInWithGoogle, signOut } from '../../myFirebase/Auth';
 import { useNavigate } from 'react-router-dom';
 import { userContext } from '../../myFirebase/Auth';
-import { Header } from '../../components/Header';
+import { Header } from '../../components/PageFrame/components/Header';
 import {
     StyledContentWrapper,
     StyledHeadline,

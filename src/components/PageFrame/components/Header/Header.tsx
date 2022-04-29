@@ -1,10 +1,10 @@
 import React, { useContext } from 'react';
 import { StyledHeader, StyledLogoWrapper, StyledProfileBtnWrapper } from './styled';
-import { Logo } from '../Logo';
+import { Logo } from '../../../Logo';
 import { Link } from 'react-router-dom';
-import { Image } from '../Image';
-import icon  from '../../assets/icons/user.svg';
-import { userContext } from '../../myFirebase';
+import { Image } from '../../../Image';
+import icon  from '../../../../assets/icons/user.svg';
+import { userContext } from '../../../../myFirebase';
 
 type Props = {
     userIcon?: boolean

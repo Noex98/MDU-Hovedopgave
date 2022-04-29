@@ -2,13 +2,13 @@ import { useState, useContext } from 'react';
 import { signInWithGoogle, signOut } from '../../myFirebase/Auth';
 import { useNavigate } from 'react-router-dom';
 import { userContext } from '../../myFirebase/Auth';
-import { Header } from '../../components/PageFrame/components/Header';
 import {
-    StyledContentWrapper,
     StyledHeadline,
-    StyledPageWrapper 
 } from './styled';
-import { CtaButton } from '../../components/FormElements/CtaButton';
+import { 
+    CtaButton,
+    PageFrame
+} from '../../components';
 
 export const Login = () => {
 
@@ -36,22 +36,19 @@ export const Login = () => {
     }
 
     return (
-        <StyledPageWrapper>
-            <Header />
-            <StyledContentWrapper>
-                <div>
-                    <StyledHeadline>Login</StyledHeadline>
-                    <CtaButton 
-                        onClick={() => signIn()} 
-                        disabled={popUpopen}
-                        color='neutral'
-                        size='lg'
-                        variant='primary'
+        <PageFrame showNav={false} headerUserIcon={false} centerPage={true}>
+            <div>
+                <StyledHeadline>Login</StyledHeadline>
+                <CtaButton 
+                    onClick={() => signIn()} 
+                    disabled={popUpopen}
+                    color='neutral'
+                    size='lg'
+                    variant='primary'
                     >
-                        Sign in with Google
-                    </CtaButton>
-                </div>
-            </StyledContentWrapper>
-        </StyledPageWrapper>
+                    Sign in with Google
+                </CtaButton>
+            </div>
+        </PageFrame>
     );
 };

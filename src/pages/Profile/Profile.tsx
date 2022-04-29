@@ -1,10 +1,12 @@
 import { signOut, userContext } from '../../myFirebase'
 import { useContext } from 'react'
-import { Gutter } from '../../components/Gutter'
-import { Image } from '../../components/Image'
 import { StyledSignOutWrapper, StyledUserImage, StyledUserInfo } from './styled'
-import { CtaButton } from '../../components/FormElements'
-import { PageFrame } from '../../components/PageFrame'
+import { 
+    PageFrame,
+    CtaButton,
+    Image,
+    Gutter
+} from '../../components'
 
 export const Profile = () => {
 

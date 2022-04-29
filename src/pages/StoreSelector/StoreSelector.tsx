@@ -1,12 +1,14 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { userContext, getStores } from '../../myFirebase';
 import { Store } from '../../dataModels'
-import { Spinner } from '../../components/Spinner';
 import { StoreOption } from './components';
 import { StyledHeadline, StyledStoreContainer } from './styled';
-import { Gutter } from '../../components/Gutter';
-import { TextInput } from '../../components/FormElements';
-import { PageFrame } from '../../components/PageFrame';
+import { 
+    PageFrame,
+    TextInput,
+    Gutter,
+    Spinner,
+} from '../../components';
 
 
 

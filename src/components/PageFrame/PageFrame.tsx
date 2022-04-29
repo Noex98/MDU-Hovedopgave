@@ -7,12 +7,14 @@ type Props = {
     children?: ReactNode,
     showHeader?: boolean,
     showNav?: boolean,
-    headerUserIcon?: boolean
+    headerUserIcon?: boolean,
+    centerPage?: boolean
 }
 
 export const PageFrame = (
     {
-        children, 
+        children,
+        centerPage,
         showHeader = true, 
         headerUserIcon = true,
         showNav = true
@@ -25,7 +27,7 @@ export const PageFrame = (
                 <Header userIcon={headerUserIcon}/>
             )}
 
-            <StyledPageWrapper>
+            <StyledPageWrapper centerPage={centerPage}>
                 {children}
             </StyledPageWrapper>
 

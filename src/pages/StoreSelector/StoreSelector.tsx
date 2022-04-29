@@ -40,8 +40,8 @@ export const StoreSelector = () => {
     
     return (
         <PageFrame showNav={false} headerUserIcon={false}>
-            <StyledHeadline>Select store</StyledHeadline>
             <Gutter>
+                <StyledHeadline>Select store</StyledHeadline>
                 {loading && (<Spinner />)}
                 <TextInput 
                     placeholder='Search'

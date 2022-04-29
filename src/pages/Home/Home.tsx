@@ -8,7 +8,7 @@ export const HomePage = () => {
         <div>
             <Header />
             <p>Home Page</p>
-            <button onClick={() => signOut()}>Sign out of Firebase</button>
+            
             <StyledTest>asdasdasd</StyledTest>
         </div>
     );

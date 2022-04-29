@@ -1,24 +1,26 @@
-import React, { useContext } from 'react'
-import { StyledHeader, StyledLogoWrapper, StyledProfileBtnWrapper } from './styled'
-import { Logo } from '../Logo'
-import { Link } from 'react-router-dom'
-import { Image } from '../Image'
-import icon  from '../../assets/icons/user.svg'
-import { userContext } from '../../myFirebase'
+import React, { useContext } from 'react';
+import { StyledHeader, StyledLogoWrapper, StyledProfileBtnWrapper } from './styled';
+import { Logo } from '../Logo';
+import { Link } from 'react-router-dom';
+import { Image } from '../Image';
+import icon  from '../../assets/icons/user.svg';
+import { userContext } from '../../myFirebase';
 
 type Props = {
     userIcon?: boolean
-}
+};
 
 export const Header = ({userIcon = true}: Props) => {
 
-    const user = useContext(userContext)
+    const user = useContext(userContext);
 
     return (
         <StyledHeader>
-            <StyledLogoWrapper>
-                <Logo />
-            </StyledLogoWrapper>
+            <Link to='/'>
+                <StyledLogoWrapper>
+                    <Logo />
+                </StyledLogoWrapper>
+            </Link>
 
             {user && userIcon && (
                 <StyledProfileBtnWrapper>
@@ -28,5 +30,5 @@ export const Header = ({userIcon = true}: Props) => {
                 </StyledProfileBtnWrapper>
             )}
         </StyledHeader>
-    )
+    );
 }

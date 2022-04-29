@@ -12,3 +12,9 @@ export const StyledUserInfo = styled.div(({theme}) => ({
     gap: 12,
     alignItems: 'center'
 }));
+
+export const StyledSignOutWrapper = styled.div(({}) => ({
+    display: 'flex',
+    justifyContent: 'center',
+    marginTop: 'auto'
+}))

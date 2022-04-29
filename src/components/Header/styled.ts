@@ -7,11 +7,11 @@ export const StyledHeader = styled.div(({theme}) => ({
     justifyContent: 'center',
     padding: '18px 12px 12px 12px',
     background: theme.colors.red,
-}))
+}));
 
 export const StyledLogoWrapper = styled.div(({theme}) => ({
     width: 'clamp(100px, 50vw, 200px)'
-}))
+}));
 
 export const StyledProfileBtnWrapper = styled.div(({theme}) => ({
     position: 'absolute',
@@ -19,4 +19,4 @@ export const StyledProfileBtnWrapper = styled.div(({theme}) => ({
     right: 24,
     transform: 'translateY(-50%)',
     cursor: 'pointer'
-}))
+}));

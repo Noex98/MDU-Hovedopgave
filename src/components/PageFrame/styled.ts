@@ -8,7 +8,8 @@ export const StyledPageWrapper = styled.div<{centerPage?: boolean}>(({theme}) =>
 ifProp('centerPage', () => ({
     display: 'flex',
     justifyContent: 'center',
-    alignItems: 'center'
+    alignItems: 'center',
+    flexDirection: 'column'
 })));
 
 export const StyledFrameWrapper = styled.div(() => ({

@@ -37,7 +37,6 @@ export const Login = () => {
 
     return (
         <PageFrame showNav={false} headerUserIcon={false} centerPage={true}>
-            <div>
                 <StyledHeadline>Login</StyledHeadline>
                 <CtaButton 
                     onClick={() => signIn()} 
@@ -48,7 +47,6 @@ export const Login = () => {
                     >
                     Sign in with Google
                 </CtaButton>
-            </div>
         </PageFrame>
     );
 };

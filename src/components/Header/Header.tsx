@@ -3,10 +3,14 @@ import { StyledHeader, StyledLogoWrapper, StyledProfileBtnWrapper } from './styl
 import { Logo } from '../Logo'
 import { Link } from 'react-router-dom'
 import { Image } from '../Image'
-import userIcon  from '../../assets/icons/user.svg'
+import icon  from '../../assets/icons/user.svg'
 import { userContext } from '../../myFirebase'
 
-export const Header = () => {
+type Props = {
+    userIcon?: boolean
+}
+
+export const Header = ({userIcon = true}: Props) => {
 
     const user = useContext(userContext)
 
@@ -16,10 +20,10 @@ export const Header = () => {
                 <Logo />
             </StyledLogoWrapper>
 
-            {user && (
+            {user && userIcon && (
                 <StyledProfileBtnWrapper>
                     <Link to="profile">
-                            <Image src={userIcon} width="32px" />
+                            <Image src={icon} width="32px" />
                     </Link>
                 </StyledProfileBtnWrapper>
             )}

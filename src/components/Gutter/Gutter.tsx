@@ -6,7 +6,7 @@ type Props = {
 }
 
 export const Gutter = ({children}: Props) => {
-  return (
-    <StyledGutter>{children}</StyledGutter>
-  )
+    return (
+        <StyledGutter>{children}</StyledGutter>
+    )
 }

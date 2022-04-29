@@ -3,7 +3,7 @@ import { signInWithGoogle, signOut } from '../../myFirebase/Auth';
 import { useNavigate } from 'react-router-dom';
 import { userContext } from '../../myFirebase/Auth';
 import { Header } from '../../components/Header';
-import { 
+import {
     StyledContentWrapper,
     StyledHeadline,
     StyledPageWrapper 
@@ -13,7 +13,7 @@ import { CtaButton } from '../../components/FormElements/CtaButton';
 export const Login = () => {
 
     const [popUpopen, setPopupOpen] = useState(false);
-    const user = useContext(userContext)
+    const user = useContext(userContext);
     const navigate = useNavigate();
 
     if (user){
@@ -32,7 +32,6 @@ export const Login = () => {
             navigate('/')
         } else {
             setPopupOpen(false)
-            
         }
     }
 

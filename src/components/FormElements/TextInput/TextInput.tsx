@@ -1,4 +1,4 @@
-import React, { useImperativeHandle, useRef, useState } from 'react'
+import React, { useImperativeHandle, useRef } from 'react'
 import { StyledInput, StyledInputWrapper, StyledInvalidMessage } from './Styled';
 
 type InputProps = React.InputHTMLAttributes<HTMLInputElement>
@@ -13,21 +13,15 @@ export const TextInput = React.forwardRef<HTMLInputElement, Props>(
     (
         {isInvalid, invalidMessage, isActive, ...rest}, ref
     ) => {
-        const [hasFocus, setHasFocus] = useState(false);
         const inputRef = useRef<HTMLInputElement>(null);
 
-        const onFocusHandler = () => setHasFocus(true);
-        const onBlurHandler = () => setHasFocus(false);
-
-        useImperativeHandle(ref, () => inputRef.current as HTMLInputElement, [ref]);
+        useImperativeHandle(ref, () => inputRef.current as HTMLInputElement, []);
 
     return (
         <>
             <StyledInputWrapper>
                 <StyledInput 
                     ref={inputRef}
-                    onFocus={onFocusHandler}
-                    onBlur={onBlurHandler}
                     {...rest}
                 />
             </StyledInputWrapper>

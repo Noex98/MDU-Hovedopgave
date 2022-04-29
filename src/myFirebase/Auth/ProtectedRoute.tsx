@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useContext } from 'react';
+import React, { useEffect, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { userContext } from './UserContextProvider';
 
@@ -19,7 +19,7 @@ export const ProtectedRoute = ({ children }: Props) => {
         if (!user) {
             navigate('/login');
         }
-    }, [user]);
+    }, [user, navigate]);
 
     return (
         <>

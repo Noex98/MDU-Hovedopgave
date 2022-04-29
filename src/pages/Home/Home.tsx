@@ -1,4 +1,3 @@
-import { StyledTest } from './styled';
 import { PageFrame } from '../../components/PageFrame';
 
 export const HomePage = () => {

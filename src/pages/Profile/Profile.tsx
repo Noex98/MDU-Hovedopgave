@@ -1,7 +1,6 @@
 import { signOut, userContext } from '../../myFirebase'
 import { useContext } from 'react'
 import { Gutter } from '../../components/Gutter'
-import { Header } from '../../components/PageFrame/components/Header'
 import { Image } from '../../components/Image'
 import { StyledSignOutWrapper, StyledUserImage, StyledUserInfo } from './styled'
 import { CtaButton } from '../../components/FormElements'

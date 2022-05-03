@@ -1,10 +1,10 @@
-import React, {useContext, useEffect} from 'react'
+import { ReactNode, useContext, useEffect} from 'react'
 import { userContext } from '../../../../myFirebase/Auth';
 import { useNavigate } from 'react-router-dom';
 
 type Props = {
-    children: React.ReactChild | React.ReactChild[]
-}
+    children: ReactNode
+};
 
 export const RequireAssignedStore = ({children}: Props) => {
     

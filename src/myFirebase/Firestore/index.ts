@@ -1,2 +1,2 @@
-export * from './getStores'
-export * from './asignToStore'
+export * from './stores'
+export * from './users'

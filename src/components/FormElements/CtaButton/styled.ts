@@ -2,8 +2,6 @@ import styled from "@emotion/styled";
 import { switchProp } from "styled-tools";
 import { Props } from "./CtaButton";
 
-
-
 export const StyledButton = styled.button<Props>(({theme}) => ({
     textAlign: 'center',
     borderRadius: theme.borderRadius.standard,

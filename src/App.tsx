@@ -1,5 +1,5 @@
 import React from 'react';
-import { UserContextProvider } from './myFirebase';
+import { RutinesContextProvider, UserContextProvider } from './myFirebase';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { Require } from './components/Require';
 
@@ -17,35 +17,37 @@ function App() {
         <ThemeProvider>
             <GlobalStyles />
             <UserContextProvider>
-                <BrowserRouter>
-                    <Routes>
-                        <Route path="/login" element={<Login />} />
-                        <Route
-                            path="/"
-                            element={
-                                <Require loggedIn assignedStore>
-                                    <HomePage />
-                                </Require>
-                            }
-                        />
-                        <Route
-                            path="/storeselector"
-                            element={
-                                <Require loggedIn>
-                                    <StoreSelector/>
-                                </Require>
-                            }
-                        />
-                        <Route
-                            path="/profile"
-                            element={
-                                <Require loggedIn assignedStore>
-                                    <Profile />
-                                </Require>
-                            }
-                        />
-                    </Routes>
-                </BrowserRouter>
+                <RutinesContextProvider>
+                    <BrowserRouter>
+                        <Routes>
+                            <Route path="/login" element={<Login />} />
+                            <Route
+                                path="/"
+                                element={
+                                    <Require loggedIn assignedStore>
+                                        <HomePage />
+                                    </Require>
+                                }
+                            />
+                            <Route
+                                path="/storeselector"
+                                element={
+                                    <Require loggedIn>
+                                        <StoreSelector/>
+                                    </Require>
+                                }
+                            />
+                            <Route
+                                path="/profile"
+                                element={
+                                    <Require loggedIn assignedStore>
+                                        <Profile />
+                                    </Require>
+                                }
+                            />
+                        </Routes>
+                    </BrowserRouter>
+                </RutinesContextProvider>
             </UserContextProvider>
         </ThemeProvider>
     );

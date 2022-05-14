@@ -1,4 +1,4 @@
-import React, { createContext, useEffect, useState } from 'react';
+import { ReactNode, createContext, useEffect, useState } from 'react';
 import { getAuth } from 'firebase/auth';
 //import { Spinner } from 'components/Spinner';
 import { IUser } from '../../dataModels';
@@ -9,7 +9,7 @@ import { Spinner } from '../../components/Spinner';
 export const userContext = createContext<IUser | null>(null)
 
 type Props = {
-    children: React.ReactChild | React.ReactChild[]
+    children: ReactNode
 }
 
 /**

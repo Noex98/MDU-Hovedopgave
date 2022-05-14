@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { userContext, getStores } from '../../myFirebase';
-import { Store } from '../../dataModels'
+import { IStore } from '../../dataModels'
 import { StoreOption } from './components';
 import { StyledHeadline, StyledStoreContainer } from './styled';
 import { 
@@ -14,7 +14,7 @@ import {
 
 export const StoreSelector = () => {
     
-    const [stores, setStores] = useState<Store[] | null>(null)
+    const [stores, setStores] = useState<IStore[] | null>(null)
     const [loading, setLoading] = useState(true)
     const [error, setError] = useState(null)
     const [searchValue, setSearchValue] = useState('')
@@ -33,7 +33,7 @@ export const StoreSelector = () => {
             })
     }, [])
 
-    const isStoreValid = (store: Store) => {
+    const isStoreValid = (store: IStore) => {
         if (searchValue === ''){
             return true;
         }

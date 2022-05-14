@@ -1,5 +1,6 @@
 import { collection, onSnapshot } from 'firebase/firestore'
 import { ReactNode, useContext, createContext, useState, useEffect } from 'react'
+import { IRutine } from '../../../../dataModels'
 import { userContext } from '../../../Auth'
 import { db } from '../../../main'
 
@@ -7,25 +8,27 @@ type Props = {
     children: ReactNode
 }
 
-export const rutineContext = createContext<any>(null)
+export const rutineContext = createContext<IRutine[] | null>(null)
 
 export const RutinesContextProvider = ({children}: Props) => {
 
     const user = useContext(userContext)
-    const [rutines, setRutines] = useState<any>(null)
+    const [rutines, setRutines] = useState<IRutine[]>([])
 
     useEffect(() => {
         if (user?.assignedStore){
-            
-            const unsubscribe = onSnapshot(collection(db, `stores/${user.assignedStore}/rutines`),
-                (data) => {
+
+            const rutinesRef = collection(db, `stores/${user.assignedStore}/rutines`)
+            const unsubscribe = onSnapshot(rutinesRef,
+                data => {
                     const x: any = [];
                     data.forEach(doc => x.push({...doc.data(), id: doc.id}))
                     setRutines(x)
                 },
-                (error) => console.log(error)
+                error => console.log(error)
             );
-            return unsubscribe
+
+            return () => unsubscribe()
         }
     }, [user?.assignedStore])
 

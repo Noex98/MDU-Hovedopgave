@@ -1,8 +1,8 @@
-import { collection, onSnapshot } from 'firebase/firestore'
-import { ReactNode, useContext, createContext, useState, useEffect } from 'react'
-import { IRutine } from '../../../../dataModels'
-import { userContext } from '../../../Auth'
-import { db } from '../../../main'
+import { collection, onSnapshot } from 'firebase/firestore';
+import { ReactNode, useContext, createContext, useState, useEffect } from 'react';
+import { IRutine } from '../../../../dataModels';
+import { userContext } from '../../../Auth';
+import { db } from '../../../main';
 
 type Props = {
     children: ReactNode

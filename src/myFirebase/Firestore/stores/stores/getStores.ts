@@ -1,6 +1,6 @@
 import { collection, getDocs } from "firebase/firestore";
 import { db } from '../../..';
-import { IStore } from '../../../../dataModels'
+import { IStore } from '../../../../dataModels';
 
 export const getStores = async () => {
     const storesRef = collection(db, "stores");

@@ -1,9 +1,11 @@
 import { collection, limit, onSnapshot, query } from 'firebase/firestore'
 import { createContext, ReactNode, useContext, useEffect, useState } from 'react'
 import { ITask } from '../../../../dataModels'
-import { userContext } from '../../../Auth'
-import { db } from '../../../main'
-import { rutineContext } from '../rutines'
+import { 
+    rutineContext,
+    db,
+    userContext 
+} from '../../../../myFirebase'
 
 type Props = {
     children: ReactNode

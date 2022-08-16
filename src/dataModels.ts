@@ -35,5 +35,5 @@ export interface ITask extends ITaskBase {
 }
 
 export interface IRutine extends ITaskBase {
-    weekday: [0|1|2|3|4|5|6]
+    weekday: number[]
 }

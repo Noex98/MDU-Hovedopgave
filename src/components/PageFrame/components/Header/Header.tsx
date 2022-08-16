@@ -24,7 +24,7 @@ export const Header = ({userIcon = true}: Props) => {
 
             {user && userIcon && (
                 <StyledProfileBtnWrapper>
-                    <Link to="profile">
+                    <Link to="/profile">
                             <Image src={icon} width="32px" />
                     </Link>
                 </StyledProfileBtnWrapper>

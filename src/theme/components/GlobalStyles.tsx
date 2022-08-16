@@ -36,6 +36,11 @@ export const GlobalStyles = () => (
                 margin: 0,
             }
 
+            a {
+                text-decoration: none;
+                color: inherit;
+            }
+
             *::selection {
                 background: ${theme.highlight.background};
                 color: ${theme.highlight.color};

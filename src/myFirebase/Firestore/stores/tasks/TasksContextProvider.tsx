@@ -6,6 +6,7 @@ import {
     db,
     userContext 
 } from '../../../../myFirebase'
+import { instanciateRutines } from './InstanciateRutines'
 
 type Props = {
     children: ReactNode
@@ -16,18 +17,19 @@ type TasksContext = {
     spillover: ITask[]
 }
 
-export const taskContext = createContext<any>(null)
+export const taskContext = createContext<TasksContext | null>(null)
 
 export const TasksContextProvider = ({children}: Props) => {
 
     const user = useContext(userContext)
     const rutines = useContext(rutineContext)
     const [days, setDays] = useState(null)
-    const [tasks, setTasks] = useState(null)
+    const [tasks, setTasks] = useState<any>(null)
+    const today = new Date()
 
     useEffect(() => {
         if (user?.assignedStore){
-            const daysRef = collection(db, `stores/${user.assignedStore}/days`)
+            const daysRef = collection(db, `stores/${user.assignedStore}/days/${today.toISOString().split('T')[0]}/tasks`)
             const q = query(daysRef, limit(3))
             const unsubscribeDays = onSnapshot(q,
                 data => {
@@ -45,10 +47,17 @@ export const TasksContextProvider = ({children}: Props) => {
     }, [user?.assignedStore])
 
     useEffect(() => {
+        if (rutines && days && user?.assignedStore){
+            const weekday = today.getDay();
+            let todaysRutines = rutines.filter(rutine => rutine.weekday.includes(weekday));
 
-        console.log(days);
-        console.log(rutines);
+            instanciateRutines(todaysRutines, days, today.toISOString().split('T')[0], user?.assignedStore)
 
+            setTasks({
+                today: days,
+                spillover: []
+            });
+        }
     }, [rutines, days])
 
     return (

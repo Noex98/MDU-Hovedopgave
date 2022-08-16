@@ -6,7 +6,8 @@ import {
     HomePage,
     Profile,
     StoreSelector,
-    Login
+    Login,
+    Task
 } from './pages';
 
 import { ThemeProvider, GlobalStyles } from './theme';
@@ -43,6 +44,14 @@ function App() {
                                         element={
                                             <Require loggedIn assignedStore>
                                                 <Profile />
+                                            </Require>
+                                        }
+                                    />
+                                    <Route
+                                        path="/task/:id"
+                                        element={
+                                            <Require loggedIn assignedStore>
+                                                <Task />
                                             </Require>
                                         }
                                     />

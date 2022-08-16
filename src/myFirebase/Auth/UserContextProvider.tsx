@@ -1,6 +1,5 @@
 import { ReactNode, createContext, useEffect, useState } from 'react';
 import { getAuth } from 'firebase/auth';
-//import { Spinner } from 'components/Spinner';
 import { IUser } from '../../dataModels';
 import { db, startAuthObserver } from '../../myFirebase';
 import { doc, onSnapshot } from "firebase/firestore";

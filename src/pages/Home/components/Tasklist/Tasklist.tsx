@@ -29,8 +29,8 @@ export const Tasklist = ({
     return (
         <StyledContainer>
             {tasks.map((task, i) => (
-                <Link to={`/task/${task.id}`}>
-                    <StyledTask completed={task.completed} key={i}>
+                <Link to={`/task/${task.id}`} key={i}>
+                    <StyledTask completed={task.completed}>
                         <div>{task.name}</div>
                         <div>{task.time}</div>
                     </StyledTask>
